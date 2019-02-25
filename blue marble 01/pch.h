@@ -10,5 +10,13 @@
 #define PCH_H
 
 // TODO: add headers that you want to pre-compile here
+#include<Windows.h>
+#include<time.h>
+#include<iostream>
+#include<conio.h>
+#include<fstream>
+#include<string>
+#include<ctime>
+
 
 #endif //PCH_H
