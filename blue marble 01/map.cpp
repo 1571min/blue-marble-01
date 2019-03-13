@@ -1,21 +1,8 @@
 #include "pch.h"
 #include "map.h"
-
+#include"win.h"
 using namespace std;
 
-void textcolor(int color_number)
-
-{
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color_number);
-}
-
-void gotoxy(int x, int y)//커서의 위치를 옮긴다
-{
-	COORD Cur;
-	Cur.X = x;
-	Cur.Y = y;
-	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Cur);
-}
 
 Map::Map(std::ifstream & is)
 {
@@ -45,8 +32,7 @@ country& Map::insert(country * head, country * new_country)
 	}
 	else {
 		new_country->m_next = head;
-		head->m_prev = new_country;
-		head = new_country;
+		head= new_country;
 		return *head;
 	}
 }
@@ -63,7 +49,7 @@ void Map::printmap(country* head)
 	cout << "_______________________________________________";
 
 	//각각의 4개의 기준점 부터 5번 4번 4번 3번 씩 반복 하며 맵을 그려준다
-	while (front->m_next != nullptr) {
+	while (front->m_next!= nullptr) {
 		for (int i = 0; i < 5; i++) {
 			printcontry(73 - 16 * i, 36);
 			gotoxy(73 - 16 * i + 4, 36 + 2);
@@ -108,6 +94,16 @@ void Map::printcontry(int x, int y)
 	y -= 6;
 	gotoxy(x, y+7);
 	cout << "================";
+}
+
+void Map::printplayer()
+{
+	gotoxy(105, 29);
+	std::cout << "|    플레이어 이름    |       자산       |\n";
+	for (int i = 0; i < 4; i++) {
+		gotoxy(105, 30 + i*2);
+		player[i].show_player_info();
+	}
 }
 
 

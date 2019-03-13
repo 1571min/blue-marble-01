@@ -3,6 +3,7 @@
 #include"pch.h"
 #include"dice.h"
 #include"map.h"
+#include"player.h"
 
 int main() {
 	system("mode con cols=150 lines=50");
@@ -15,14 +16,17 @@ int main() {
 	while (true) {
 		korea.printmap(korea.gethead());
 		number = D1.drawdice();
+		korea.printplayer();
 		if (!_kbhit()) {
 			dicehit = _getch();
 			if (dicehit == ' ')
 			{
-				Sleep(50);
+				Sleep(150);
 				system("cls");
 			}
 			
+			while (getchar() != '\n')
+				continue;
 		}
 	}
 	
