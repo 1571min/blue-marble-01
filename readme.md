@@ -6,10 +6,18 @@
 
 * 예시1
 
+<<<<<<< HEAD
 <img src="image/bluemable.png" hegiht="200px" width="200px">
+=======
+<img src="bluemable.png" hegiht="200px" width="200px">
+>>>>>>> 989b2490cbd5216a68f9e551e963dfe5d90f6236
 
 
 * 예시2
 
+<<<<<<< HEAD
 <img src="image/bluemable2.png" hegiht="200px" width="200px">
+=======
+<img src="bluemable2.png" hegiht="200px" width="200px">
+>>>>>>> 989b2490cbd5216a68f9e551e963dfe5d90f6236
 
