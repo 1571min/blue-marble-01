@@ -17,7 +17,10 @@ int main() {
 		korea.printmap(korea.gethead());
 		number = D1.drawdice();
 		korea.printplayer();
-		if (!_kbhit()) {
+
+		//_kbhit() 버퍼에 키가 있으면 1 버퍼에 키가 없으면 0
+		if (_kbhit()==0) {
+
 			dicehit = _getch();
 			if (dicehit == ' ')
 			{
@@ -25,9 +28,20 @@ int main() {
 				system("cls");
 			}
 			
-			while (getchar() != '\n')
-				continue;
+			
 		}
+		//연속된 값을 입력하면 버퍼를 없에 준다
+		else
+		{
+			//버퍼에 입력된 값이 있을 때까지 입력을 받는다
+			while (_kbhit() == 1)
+			{
+				cout << _getch() << endl;
+			}
+			Sleep(150);
+			system("cls");
+		}
+	
 	}
 	
 	return 0;
