@@ -6,13 +6,13 @@
 
 * 예시1
 
-<img src="image/bluemable.PNG" hegiht="200px" width="200px">
+<img src="image/bluemable.PNG" hegiht="450px" width="400px">
 
 
 
 * 예시2
 
 
-<img src="image/bluemable2.PNG" hegiht="200px" width="200px">
+<img src="image/bluemable2.PNG" hegiht="450px" width="400px">
 
 
